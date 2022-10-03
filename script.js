@@ -11,7 +11,7 @@ function playRound(playerSelection, computerSelection) {
     const scissors_paper = "Scissors beats Paper";
 
     // Player enter wrong option
-    if(playerSelection !== "rock" || playerSelection !== "paper" || playerSelection != "scissors") {
+    if(playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
         // return "Option not available";
         console.log("Option not available");
     }
@@ -71,3 +71,4 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection = prompt("Select Rock, Paper or Scissors: ").toLowerCase();
 const computerSelection = getComputerChoice(); 
+console.log(playRound(playerSelection, computerSelection));
