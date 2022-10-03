@@ -12,24 +12,20 @@ function playRound(playerSelection, computerSelection) {
 
     // Player enter wrong option
     if(playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-        // return "Option not available";
-        console.log("Option not available");
+        return "Option not available";
     }
 
     // Computer chooses ROCK
     if(computerSelection === 1) {
         switch(playerSelection) {
             case "rock":
-                // return tie;
-                console.log(tie);
+                return tie;
                 break;
             case "paper":
-                // return `${won} ${paper_rock}`;
-                console.log(`${won} ${paper_rock}`);
+                return `${won} ${paper_rock}`;
                 break;
             case "scissors":
-                // return `${lost} ${rock_scissors}`;
-                console.log(`${lost} ${rock_scissors}`);
+                return `${lost} ${rock_scissors}`;
                 break;
         }
     }
@@ -37,16 +33,13 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 2) {
         switch(playerSelection) {
             case "rock":
-                // return `${lost} ${paper_rock}`;
-                console.log(`${lost} ${paper_rock}`);
+                return `${lost} ${paper_rock}`;
                 break;
             case "paper":
-                // return tie;
-                console.log(tie);
+                return tie;
                 break;
             case "scissors":
-                // return `${won} ${scissors_paper}`;
-                console.log(`${won} ${scissors_paper}`);
+                return `${won} ${scissors_paper}`;
                 break;
         }
     }
@@ -54,16 +47,13 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 3) {
         switch(playerSelection) {
             case "rock":
-                // return `${won} ${rock_scissors}`;
-                console.log(`${won} ${rock_scissors}`);
+                return `${won} ${rock_scissors}`;
                 break;
             case "paper":
-                // return `${lost} ${scissors_paper}`;
-                console.log(`${lost} ${scissors_paper}`);
+                return `${lost} ${scissors_paper}`;
                 break;
             case "scissors":
-                // return tie;
-                console.log(tie);
+                return tie;
                 break;
         }
     }
