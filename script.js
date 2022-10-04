@@ -9,6 +9,7 @@ function playRound(playerSelection, computerSelection) {
     const paper_rock = "Paper beats Rock";
     const rock_scissors = "Rock beats Scissors";
     const scissors_paper = "Scissors beats Paper";
+    let result;       // lost: -1; tie: 0; win: 1
 
     // Player enter wrong option
     if(playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
@@ -19,13 +20,19 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 1) {
         switch(playerSelection) {
             case "rock":
-                return tie;
+                console.log(tie);
+                result = 0;
+                return result;
                 break;
             case "paper":
-                return `${won} ${paper_rock}`;
+                console.log(`${won} ${paper_rock}`);
+                result = 1;
+                return result;
                 break;
             case "scissors":
-                return `${lost} ${rock_scissors}`;
+                console.log(`${lost} ${rock_scissors}`);
+                result = -1;
+                return result;
                 break;
         }
     }
@@ -33,13 +40,19 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 2) {
         switch(playerSelection) {
             case "rock":
-                return `${lost} ${paper_rock}`;
+                console.log(`${lost} ${paper_rock}`);
+                result = -1;
+                return result;
                 break;
             case "paper":
-                return tie;
+                console.log(tie);
+                result = 0;
+                return result;
                 break;
             case "scissors":
-                return `${won} ${scissors_paper}`;
+                console.log(`${won} ${scissors_paper}`);
+                result = 1;
+                return result;
                 break;
         }
     }
@@ -47,13 +60,19 @@ function playRound(playerSelection, computerSelection) {
     if(computerSelection === 3) {
         switch(playerSelection) {
             case "rock":
-                return `${won} ${rock_scissors}`;
+                console.log(`${won} ${rock_scissors}`);
+                result = 1;
+                return result;
                 break;
             case "paper":
-                return `${lost} ${scissors_paper}`;
+                console.log(`${lost} ${scissors_paper}`);
+                result = -1;
+                return result;
                 break;
             case "scissors":
-                return tie;
+                console.log(tie);
+                result = 0;
+                return result;
                 break;
         }
     }
@@ -61,4 +80,3 @@ function playRound(playerSelection, computerSelection) {
 
 const playerSelection = prompt("Select Rock, Paper or Scissors: ").toLowerCase();
 const computerSelection = getComputerChoice(); 
-console.log(playRound(playerSelection, computerSelection));
