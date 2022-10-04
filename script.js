@@ -89,7 +89,7 @@ function game(repeat = 1) {
     let playerScore = 0;
 
     for(i = 0; i < repeat; i++) {
-        result = playRound(playerSelection, computerSelection);
+        result = playRound(getPlayerChoice(), getComputerChoice());
         if(typeof result != null && typeof result != undefined) {
             switch(result) {
                 case -1:
@@ -109,6 +109,4 @@ function game(repeat = 1) {
     return (playerScore > computerScore) ? "Player wins!" : (playerScore === computerScore) ? "No one wins!" : "Computer wins!";
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice(); 
 console.log(game(5));
