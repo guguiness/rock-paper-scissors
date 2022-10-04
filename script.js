@@ -2,6 +2,10 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3) + 1;
 } 
 
+function getPlayerChoice() {
+    return prompt("Select Rock, Paper or Scissors: ").toLowerCase();
+}
+
 function playRound(playerSelection, computerSelection) {
     const tie = "It's a tie!";
     const won = "You Win!";
@@ -105,6 +109,6 @@ function game(repeat = 1) {
     return (playerScore > computerScore) ? "Player wins!" : (playerScore === computerScore) ? "No one wins!" : "Computer wins!";
 }
 
-const playerSelection = prompt("Select Rock, Paper or Scissors: ").toLowerCase();
+const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice(); 
 console.log(game(5));
