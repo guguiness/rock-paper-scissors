@@ -13,7 +13,7 @@ function playRound(playerSelection, computerSelection) {
 
     // Player enter wrong option
     if(playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-        return "Option not available";
+        console.log("Option not available");
     }
 
     // Computer chooses ROCK
@@ -78,5 +78,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game(repeat = 1) {
+    let i;
+    let result;
+    let computerScore = 0;
+    let playerScore = 0;
+
+    for(i = 0; i < repeat; i++) {
+        result = playRound(playerSelection, computerSelection);
+        if(typeof result != null && typeof result != undefined) {
+            switch(result) {
+                case -1:
+                    computerScore++;
+                    break;
+                case 1:
+                    playerScore++;
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            return;
+        }
+    }
+
+    return (playerScore > computerScore) ? "Player wins!" : (playerScore === computerScore) ? "No one wins!" : "Computer wins!";
+}
+
 const playerSelection = prompt("Select Rock, Paper or Scissors: ").toLowerCase();
 const computerSelection = getComputerChoice(); 
+console.log(game(5));
