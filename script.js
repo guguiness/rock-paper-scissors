@@ -16,7 +16,8 @@ function playRound(playerSelection, computerSelection) {
     let result;       // lost: -1; tie: 0; win: 1
 
     // Player enter wrong option
-    if(playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+    if(playerSelection !== "rock" && playerSelection !== "paper" 
+        && playerSelection !== "scissors") {
         console.log("Option not available");
     }
 
@@ -102,11 +103,14 @@ function game(repeat = 1) {
                     break;
             }
         } else {
+            i--;
             return;
         }
     }
 
-    return (playerScore > computerScore) ? "Player wins!" : (playerScore === computerScore) ? "No one wins!" : "Computer wins!";
+    return (playerScore > computerScore) ? `Player wins! (${playerScore}X${computerScore})` 
+        : (playerScore === computerScore) ? `No one wins! (${playerScore}X${computerScore})` 
+        : `Computer wins! (${computerScore}X${playerScore})`;
 }
 
 console.log(game(5));
